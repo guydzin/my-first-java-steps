@@ -36,7 +36,7 @@ public class Homework_5 {
             System.out.println();
         }
         System.out.println();
-
+//toDo Find complete solution to 3rd task about rhombus
         for (int m = 0; m < newArrayTwo.length; m++) {
             for (int l = 0; l < newArrayTwo.length; l++) {
                 if (l==((length-1)/2)-m||l==((length-1)/2)+m){
