@@ -15,7 +15,7 @@ public class Homework_6_Helper {
         char[] vowelsPattern = "аеёиоуэыюяАЕЁИОУЭЫЮЯ".toCharArray();
         for (int i = 0; i < arrayIn.length; i++) {
             for (int j = 0; j < vowelsPattern.length; j++) {
-                if(arrayIn[i] == vowelsPattern[j]){
+                if (arrayIn[i] == vowelsPattern[j]) {
                     vowelsResultSet++;
                 }
             }
@@ -23,21 +23,33 @@ public class Homework_6_Helper {
         return vowelsResultSet;
     }
 
-    protected StringBuilder rhombus (int length){
+    protected StringBuilder rhombus(int length) {
         int[][] newArrayTwo = new int[length][length];
         StringBuilder rhombus = new StringBuilder();
 
         if (length % 2 == 0) {
             System.out.println("Массив должен быть нечетным");
-        }
-
-        else {
-            for (int m = 0; m < newArrayTwo.length; m++) {
-                for (int l = 0; l < newArrayTwo.length; l++) {
-                    if (l==((length-1)/2)-m||l==((length-1)/2)+m){
-                        newArrayTwo[m][l]=1;
+        } else {
+            int startIndex = newArrayTwo.length / 2;
+            int endIndex = newArrayTwo.length / 2;
+            for (int i = 0; i < newArrayTwo.length; i++) {
+                for (int j = 0; j < newArrayTwo[0].length; j++) {
+                    if (j >= startIndex && j <= endIndex) {
+                        newArrayTwo[i][j] = 1;
                     }
-                    rhombus.append(String.format("%s ",newArrayTwo[m][l]));
+                }
+                if (i < newArrayTwo.length / 2) {
+                    startIndex--;
+                    endIndex++;
+                } else {
+                    startIndex++;
+                    endIndex--;
+                }
+            }
+
+            for (int i = 0; i < newArrayTwo.length; i++) {
+                for (int j = 0; j < newArrayTwo[0].length; j++) {
+                    rhombus.append(String.format("%s ", newArrayTwo[i][j]));
                 }
                 rhombus.append("\n");
             }
@@ -45,11 +57,11 @@ public class Homework_6_Helper {
         return rhombus;
     }
 
-    protected StringBuilder twoDimArray (int [] [] twoDimArray){
+    protected StringBuilder twoDimArray(int[][] twoDimArray) {
         StringBuilder array = new StringBuilder();
         for (int m = 0; m < twoDimArray.length; m++) {
             for (int l = 0; l < twoDimArray[0].length; l++) {
-                array.append(String.format("%s ",twoDimArray[m][l]));
+                array.append(String.format("%s ", twoDimArray[m][l]));
             }
             array.append("\n");
         }
