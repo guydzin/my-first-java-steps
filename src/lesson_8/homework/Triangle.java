@@ -1,14 +1,15 @@
 package lesson_8.homework;
 
-public class Rectangle extends Figure {
-    public Rectangle(double a, double b, double c, double d, String name) {
-        super(a, b, c, d, name);
+public class Triangle extends Figure {
+    public Triangle(double a, double b, double c, String name) {
+        super(a, b, c, name);
     }
 
     @Override
     public void getPerimeter() {
-        super.perimeter = a + b + c + d;
-        if (a <= 0 || b <= 0 || c <= 0 || d <= 0 || name.isBlank()) {
+        double p = (a + b + c) / 2;
+        super.perimeter = (Math.sqrt((p - a) * (p - b) * (p - c)));
+        if (a <= 0 || b <= 0 || c <= 0 || name.isBlank()) {
             System.out.println("Неверно указан параметр фигуры\n");
             return;
         }
