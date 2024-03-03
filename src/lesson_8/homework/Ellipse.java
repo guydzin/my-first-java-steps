@@ -9,7 +9,7 @@ public class Ellipse extends Circle {
 
     @Override
     public void getPerimeter() {
-        super.perimeter = (4 * (Math.PI * r * r2) + (r - r2))/(r+r2);
+        perimeter = (4 * (Math.PI * r * r2) + (r - r2))/(r+r2);
         System.out.printf("Фигура - %s. Её периметр равен - %.2f\n", name, perimeter);
     }
 }

@@ -7,7 +7,7 @@ public class Circle extends Figure {
 
     @Override
     public void getPerimeter() {
-        super.perimeter = 2 * Math.PI * r;
+        perimeter = 2 * Math.PI * r;
         if (r<=0 || name.isBlank()) {
             System.out.println("Неверно указан параметр фигуры\n");
             return;

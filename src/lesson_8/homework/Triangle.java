@@ -8,7 +8,7 @@ public class Triangle extends Figure {
     @Override
     public void getPerimeter() {
         double p = (a + b + c) / 2;
-        super.perimeter = (Math.sqrt((p - a) * (p - b) * (p - c)));
+        perimeter = (Math.sqrt((p - a) * (p - b) * (p - c)));
         if (a <= 0 || b <= 0 || c <= 0 || name.isBlank()) {
             System.out.println("Неверно указан параметр фигуры\n");
             return;
