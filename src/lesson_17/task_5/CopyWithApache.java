@@ -16,7 +16,7 @@ public class CopyWithApache implements ICopyUtils {
         try {
             FileUtils.copyFile(fileFrom, fileTo);
         } catch (IOException e) {
-            System.out.println(e);
+            throw new RuntimeException(e);
         }
     }
 }
