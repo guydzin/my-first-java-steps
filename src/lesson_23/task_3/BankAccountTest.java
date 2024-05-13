@@ -2,7 +2,6 @@ package lesson_23.task_3;
 
 import org.junit.jupiter.api.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.*;
 
@@ -74,12 +73,14 @@ public class BankAccountTest {
 
     @Test
     public void shouldReturnNullAmountWhenNotActive(){
-//        final IllegalStateException exception = assertThrows(IllegalStateException.class,new Executable() {
-//            @Override
-//            public void execute() {
-//                account.getAmount();
-//            }
-//        });
+/*
+        final IllegalStateException exception = assertThrows(IllegalStateException.class,new Executable() {
+            @Override
+            public void execute() {
+                account.getAmount();
+            }
+        });
+*/
         final IllegalStateException exception = assertThrows(IllegalStateException.class,()->account.getAmount());
         assertEquals("Счёт не активирован.", exception.getMessage());
         assertNull(account.getCurrency());
