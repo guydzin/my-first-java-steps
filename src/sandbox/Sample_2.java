@@ -7,5 +7,9 @@ public class Sample_2 {
         System.out.println(x + " Второй пример");
         System.out.println(5 / 2 % 5 + " Третий пример");
         System.out.println(2 % 5 + " Четвертый пример");
+
+        System.out.print("Diego");
+        System.out.println("The");
+        System.out.print("Best");
     }
 }
